@@ -31,12 +31,12 @@ static void PrintDivider(string? label = null)
 {
     if (label is null)
     {
-        Console.WriteLine($"{C.Gray}  {'─'.ToString().PadRight(71, '─')}{C.Reset}");
+        Console.WriteLine($"{C.Gray}  {new string('─', 71)}{C.Reset}");
     }
     else
     {
         var pad = Math.Max(0, 69 - label.Length);
-        Console.WriteLine($"{C.Gray}  ─── {C.White}{C.Bold}{label}{C.Reset}{C.Gray} {'─'.ToString().PadRight(pad, '─')}{C.Reset}");
+        Console.WriteLine($"{C.Gray}  ─── {C.White}{C.Bold}{label}{C.Reset}{C.Gray} {new string('─', pad)}{C.Reset}");
     }
 }
 
@@ -72,7 +72,7 @@ static void PrintSection(string title, string content, string color)
     {
         Console.WriteLine($"  {color}│{C.Reset}  {line}");
     }
-    Console.WriteLine($"  {color}└{'─'.ToString().PadRight(60, '─')}{C.Reset}");
+    Console.WriteLine($"  {color}└{new string('─', 60)}{C.Reset}");
 }
 
 static void PrintRemediationSteps(List<RemediationStep> steps)
@@ -101,7 +101,7 @@ static void PrintRemediationSteps(List<RemediationStep> steps)
         }
     }
 
-    Console.WriteLine($"  {C.Yellow}└{'─'.ToString().PadRight(60, '─')}{C.Reset}");
+    Console.WriteLine($"  {C.Yellow}└{new string('─', 60)}{C.Reset}");
     var totalTime = steps.Sum(s => s.EstimatedTimeMinutes);
     Console.WriteLine($"\n  {C.Gray}  Total estimated recovery time: {C.White}{C.Bold}{totalTime} minutes{C.Reset}");
 }
@@ -135,7 +135,7 @@ static void PrintLogSummary(IReadOnlyList<LogEntry> logs)
     {
         Console.WriteLine($"  {C.Blue}│{C.Reset}    {C.Cyan}{svc,-38}{C.Reset} {C.Bold}{count,2}{C.Reset} entries");
     }
-    Console.WriteLine($"  {C.Blue}└{'─'.ToString().PadRight(60, '─')}{C.Reset}");
+    Console.WriteLine($"  {C.Blue}└{new string('─', 60)}{C.Reset}");
 }
 
 // ─── Main ─────────────────────────────────────────────────────────────────────

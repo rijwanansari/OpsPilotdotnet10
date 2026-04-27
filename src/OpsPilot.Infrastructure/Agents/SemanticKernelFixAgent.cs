@@ -1,15 +1,12 @@
 using Microsoft.Extensions.Logging;
-using Microsoft.SemanticKernel;
 using OpsPilot.Application.Interfaces;
 using OpsPilot.Domain.Entities;
 
 namespace OpsPilot.Infrastructure.Agents;
 
 public sealed class SemanticKernelFixAgent(
-    Kernel kernel,
     ILogger<SemanticKernelFixAgent> logger) : IFixAgent
 {
-    private readonly Kernel _kernel = kernel;
     public async Task<List<RemediationStep>> ProposeFixAsync(Incident incident, AgentResult rootCauseResult, CancellationToken cancellationToken = default)
     {
         logger.LogInformation("Fix agent generating remediation plan based on root cause from {Agent}", rootCauseResult.AgentName);
