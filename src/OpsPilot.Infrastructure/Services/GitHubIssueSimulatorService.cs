@@ -15,7 +15,7 @@ public sealed class GitHubIssueSimulatorService(
 
         var owner = configuration["GitHub:Owner"] ?? "yourorg";
         var repo = configuration["GitHub:Repo"] ?? "payment-api";
-        var issueNumber = new Random().Next(2800, 2900);
+        var issueNumber = Random.Shared.Next(2800, 2900);
 
         logger.LogInformation("[SIMULATED] Creating GitHub issue for incident {IncidentId}", incident.Id);
 

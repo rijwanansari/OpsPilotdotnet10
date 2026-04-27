@@ -51,8 +51,8 @@ public sealed class LogAnalysisPlugin
             {
                 Service = kvp.Key,
                 ErrorCount = kvp.Value,
-                Total = totalByService.GetValueOrDefault(kvp.Key, 1),
-                Rate = (double)kvp.Value / totalByService.GetValueOrDefault(kvp.Key, 1) * 100
+                Total = totalByService[kvp.Key],
+                Rate = (double)kvp.Value / totalByService[kvp.Key] * 100
             })
             .OrderByDescending(x => x.Rate)
             .FirstOrDefault();

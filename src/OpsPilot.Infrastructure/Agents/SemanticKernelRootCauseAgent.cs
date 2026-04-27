@@ -9,6 +9,7 @@ public sealed class SemanticKernelRootCauseAgent(
     Kernel kernel,
     ILogger<SemanticKernelRootCauseAgent> logger) : IRootCauseAgent
 {
+    private readonly Kernel _kernel = kernel;
     public async Task<AgentResult> AnalyzeAsync(Incident incident, AgentResult triageResult, IReadOnlyList<LogEntry> logs, CancellationToken cancellationToken = default)
     {
         logger.LogInformation("Root cause agent processing triage results from {Agent}", triageResult.AgentName);
