@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="src/OpsPilot.Domain/OpsPilot.Domain.csproj" />
+  <Project Path="src/OpsPilot.Application/OpsPilot.Application.csproj" />
+  <Project Path="src/OpsPilot.Infrastructure/OpsPilot.Infrastructure.csproj" />
+  <Project Path="src/OpsPilot.Console/OpsPilot.Console.csproj" />
+  <Project Path="tests/OpsPilot.Tests/OpsPilot.Tests.csproj" />
+</Solution>
